@@ -16,7 +16,7 @@ namespace Avalonia.Labs.Gif
     /// release resources.</remarks>
     public class GifStreamSource : IGifSource, IDisposable
     {
-        private readonly Stream stream;
+        private readonly Stream? stream;
 
         private readonly PixelSize size;
 
@@ -35,9 +35,9 @@ namespace Avalonia.Labs.Gif
         public PixelSize Size => size;
 
         /// <inheritdoc/>
-        public Stream GetStream()
+        public Stream? GetStream()
         {
-            stream.Position = 0;
+            stream?.Position = 0;
             return stream;
         }
 
@@ -47,7 +47,7 @@ namespace Avalonia.Labs.Gif
             {
                 if (disposing)
                 {
-                    stream.Dispose();
+                    stream?.Dispose();
                 }
 
                 disposedValue = true;

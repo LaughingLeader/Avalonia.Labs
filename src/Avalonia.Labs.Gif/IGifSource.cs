@@ -20,6 +20,6 @@ namespace Avalonia.Labs.Gif
         /// Note: the returned stream should not be disposed by the caller.
         /// </summary>
         /// <returns>The underlying data stream</returns>
-        Stream GetStream();
+        Stream? GetStream();
     }
 }
